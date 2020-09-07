@@ -1,5 +1,8 @@
 /* Problem - https://leetcode.com/problems/backspace-string-compare/ */
-class backspaceCompare844a {
+
+package com.Leetcode;
+
+class BackspaceCompare844a {
 
     private static String backspaceCompareA(String S) {
         int skip = 0;
