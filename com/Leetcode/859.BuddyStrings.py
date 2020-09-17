@@ -3,7 +3,7 @@ def buddyStrings(A: str, B: str) -> bool:
         return False
     if A == B:
         return len(A) - len(set(A)) >= 1
-    sum = 0;
+    sum = 0
     for i in range(len(A)):
         if A[i] != B[i]:
             sum += 1
@@ -16,4 +16,6 @@ def buddyStrings(A: str, B: str) -> bool:
         if sum > 2:
             return False
     return sum == 2
-print(buddyStrings("acccccb","bccccca"))
+
+
+print(buddyStrings("acccccb", "bccccca"))

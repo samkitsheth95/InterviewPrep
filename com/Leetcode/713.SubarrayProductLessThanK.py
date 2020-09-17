@@ -1,4 +1,6 @@
 from typing import List
+
+
 class Solution:
     def numSubarrayProductLessThanK(self, nums: List[int], k: int) -> int:
         j, total, pairs = 0, 1, 0
@@ -14,9 +16,10 @@ class Solution:
                     j += 1
                 pairs += i - j
         return pairs
-    
+
     def numSubarrayProductLessThanKSolution(self, nums, k):
-        if k <= 1: return 0
+        if k <= 1:
+            return 0
         prod = 1
         ans = left = 0
         for right, val in enumerate(nums):

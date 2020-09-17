@@ -1,6 +1,7 @@
 from collections import Counter
 from typing import List
 
+
 def wordSubsets(A: List[str], B: List[str]) -> List[str]:
     minFreq = {}
     for word in B:
@@ -25,5 +26,7 @@ def wordSubsets(A: List[str], B: List[str]) -> List[str]:
         if flag:
             ans.append(word)
     return ans
-    
-print(wordSubsets(["amazon","apple","facebook","google","leetcode"],["e","o"]))
+
+
+print(wordSubsets(["amazon", "apple", "facebook",
+                   "google", "leetcode"], ["e", "o"]))
