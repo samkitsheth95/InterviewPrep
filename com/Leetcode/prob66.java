@@ -1,4 +1,5 @@
 /* Problem - https://leetcode.com/problems/plus-one/ */
+package com.Leetcode;
 
 public class prob66 {
     public int[] plusOne(int[] nums) {

@@ -1,4 +1,6 @@
 /* Problem - https://leetcode.com/problems/best-sightseeing-pair/ */
+package com.Leetcode;
+
 class prob1014{
 
     public static int maxScoreSightseeingPair(int[] A) {

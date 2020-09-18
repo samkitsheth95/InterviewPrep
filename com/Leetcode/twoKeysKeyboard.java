@@ -1,3 +1,5 @@
+package com.Leetcode;
+
 class twoKeysKeyboard {
 
     private static int getFirstFactor(int n) {

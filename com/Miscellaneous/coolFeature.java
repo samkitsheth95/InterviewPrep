@@ -1,3 +1,5 @@
+package com.Miscellaneous;
+
 import java.util.*;
 
 class coolFeature {

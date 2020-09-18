@@ -1,4 +1,6 @@
 /* problem - https://leetcode.com/problems/string-compression/submissions/ */
+package com.Leetcode;
+
 class prob443 {
     public int compress(char[] chars) {
         int marker = 0, count = 1;

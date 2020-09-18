@@ -1,3 +1,5 @@
+package com.Miscellaneous;
+
 class ToeplitzMatrix {
 
     public static boolean isToeplitz(int[][] arr) {

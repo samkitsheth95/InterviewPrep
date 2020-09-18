@@ -1,4 +1,6 @@
 /* problem - https://leetcode.com/problems/remove-outermost-parentheses/ */
+package com.Leetcode;
+
 class prob1021{
 
     private static String removeOuterParentheses(String S) {  

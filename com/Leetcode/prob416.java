@@ -1,3 +1,5 @@
+package com.Leetcode;
+
 class prob416 {
 
     private static boolean canPartition(int[] nums) {

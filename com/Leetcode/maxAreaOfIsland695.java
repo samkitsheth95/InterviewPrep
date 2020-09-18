@@ -1,3 +1,5 @@
+package com.Leetcode;
+
 class maxAreaofIsland695 {
 
     private static int findAllOne(int[][] grid, boolean[][] seen, int i, int j,int sum) {

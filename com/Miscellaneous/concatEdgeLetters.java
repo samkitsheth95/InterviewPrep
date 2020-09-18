@@ -1,4 +1,5 @@
-import java.util.*;
+package com.Miscellaneous;
+
 class concatEdgeLetters {
 
     private static String[] cel(String[] a) {

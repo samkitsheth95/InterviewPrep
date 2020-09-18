@@ -1,7 +1,5 @@
 /* Problem - https://leetcode.com/problems/set-matrix-zeroes/ */
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+package com.Leetcode;
 
 public class prob73 {
 

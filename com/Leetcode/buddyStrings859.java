@@ -1,3 +1,5 @@
+package com.Leetcode;
+
 import java.util.*;
 
 class buddyStrings859 {

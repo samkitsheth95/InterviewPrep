@@ -1,3 +1,5 @@
+package com.Leetcode;
+
 class missingNumber268 {
 
     public static int missingNumber(int[] nums) {

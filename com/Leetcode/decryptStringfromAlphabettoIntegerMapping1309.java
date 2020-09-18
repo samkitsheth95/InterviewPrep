@@ -1,3 +1,5 @@
+package com.Leetcode;
+
 class decryptStringfromAlphabettoIntegerMapping1309 {
 
     public static String freqAlphabets(String s) {

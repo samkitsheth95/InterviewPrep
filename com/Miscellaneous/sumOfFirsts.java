@@ -1,4 +1,4 @@
-import java.util.*;
+package com.Miscellaneous;
 
 class sumOfFirsts {
 
