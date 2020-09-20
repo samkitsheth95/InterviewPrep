@@ -4,11 +4,11 @@ import java.util.Stack;
 
 public class BinarySearchTree {
 
-	Node root;
+	TreeNode root;
 
 	public void addNode(int val) {
-		Node newNode = new Node(val);
-		Node fNode = root;
+		TreeNode newNode = new TreeNode(val);
+		TreeNode fNode = root;
 
 		while (true) {
 			if (root == null) {
@@ -32,12 +32,12 @@ public class BinarySearchTree {
 		}
 	}
 
-	public Node getRoot() {
+	public TreeNode getRoot() {
 		return root;
 	}
 
-	public Node search(int val) {
-		Node fNode = root;
+	public TreeNode search(int val) {
+		TreeNode fNode = root;
 		while (fNode != null && fNode.val != val) {
 			if (val < fNode.val) {
 				fNode = fNode.left;
@@ -52,7 +52,7 @@ public class BinarySearchTree {
 		return fNode;
 	}
 
-	public void printTreeR(Node fNode) {
+	public void printTreeR(TreeNode fNode) {
 		if (fNode != null) {
 			System.out.print(fNode.val + " ");
 			printTreeR(fNode.left);
@@ -60,10 +60,10 @@ public class BinarySearchTree {
 		}
 	}
 
-	public void printTreeI(Node fNode) {
+	public void printTreeI(TreeNode fNode) {
 		if (fNode == null)
 			return;
-		Stack<Node> s = new Stack<Node>();
+		Stack<TreeNode> s = new Stack<TreeNode>();
 		s.push(fNode);
 		while (!s.isEmpty()) {
 			fNode = s.pop();
@@ -90,12 +90,12 @@ public class BinarySearchTree {
 		// Node s=newtree.search(10);
 	}
 
-	public class Node {
+	public class TreeNode {
 		public int val;
-		public Node right;
-		public Node left;
+		public TreeNode right;
+		public TreeNode left;
 
-		public Node(int val) {
+		public TreeNode(int val) {
 			this.val = val;
 		}
 	}
