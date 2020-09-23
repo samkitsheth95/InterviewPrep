@@ -1,6 +1,8 @@
 package com.DataStructure;
 
 import java.util.Stack;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BinarySearchTree {
 
@@ -77,17 +79,35 @@ public class BinarySearchTree {
 		}
 	}
 
+	public void printTreeLevelOrder(TreeNode fNode) {
+		if (fNode == null) {
+			System.out.println("Empty Tree!");
+			return;
+		}
+		Queue<TreeNode> queue = new LinkedList<>();
+		queue.add(fNode);
+		while (!queue.isEmpty()) {
+			TreeNode current = queue.poll();
+			System.out.print(current.val+" ");
+			if (current.left != null) {
+				queue.add(current.left);
+			}
+			if (current.right != null) {
+				queue.add(current.right);
+			}
+		}
+		System.out.println();
+	}
+
 	public static void main(String args[]) {
 		System.out.println("Hello World!");
 		BinarySearchTree newtree = new BinarySearchTree();
-		newtree.addNode(10);
+		newtree.addNode(3);
+		newtree.addNode(20);
+		newtree.addNode(9);
 		newtree.addNode(15);
-		newtree.addNode(19);
-		newtree.addNode(17);
-		newtree.addNode(11);
-		newtree.printTreeI(newtree.root); // System.out.println();
-		newtree.printTreeR(newtree.root);
-		// Node s=newtree.search(10);
+		newtree.addNode(7);
+		newtree.printTreeLevelOrder(newtree.getRoot());
 	}
 
 	public class TreeNode {

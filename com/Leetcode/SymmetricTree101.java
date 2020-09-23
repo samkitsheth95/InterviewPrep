@@ -1,8 +1,10 @@
 package com.Leetcode;
 
+import com.DataStructure.BinarySearchTree;
+
 public class SymmetricTree101 {
 
-    public boolean checkSymmetric(TreeNode left, TreeNode right) {
+    public boolean checkSymmetric(BinarySearchTree.TreeNode left, BinarySearchTree.TreeNode right) {
         if (left == null && right == null) {
             return true;
         }
@@ -13,7 +15,7 @@ public class SymmetricTree101 {
                 && checkSymmetric(left.right, right.left);
     }
 
-    public boolean isSymmetric(TreeNode root) {
+    public boolean isSymmetric(BinarySearchTree.TreeNode root) {
         if (root == null) {
             return true;
         }
