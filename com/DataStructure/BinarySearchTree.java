@@ -54,15 +54,15 @@ public class BinarySearchTree {
 		return fNode;
 	}
 
-	public void printTreeR(TreeNode fNode) {
+	public void printTreePreorderTraversalRecursive(TreeNode fNode) {
 		if (fNode != null) {
 			System.out.print(fNode.val + " ");
-			printTreeR(fNode.left);
-			printTreeR(fNode.right);
+			printTreePreorderTraversalRecursive(fNode.left);
+			printTreePreorderTraversalRecursive(fNode.right);
 		}
 	}
 
-	public void printTreeI(TreeNode fNode) {
+	public void printTreePreorderTraversalIterative(TreeNode fNode) {
 		if (fNode == null)
 			return;
 		Stack<TreeNode> s = new Stack<TreeNode>();
@@ -107,7 +107,7 @@ public class BinarySearchTree {
 		newtree.addNode(9);
 		newtree.addNode(15);
 		newtree.addNode(7);
-		newtree.printTreeLevelOrder(newtree.getRoot());
+		newtree.printTreePreorderTraversalRecursive(newtree.getRoot());
 	}
 
 	public class TreeNode {
