@@ -1,9 +1,10 @@
 class Node:
 
-    def __init__(self, val = None):
+    def __init__(self, val=None):
         self.val = val
         self.left = None
         self.right = None
+
 
 class BinarySearchTree:
 
@@ -12,7 +13,7 @@ class BinarySearchTree:
 
     def getRoot(self):
         return self.root
-    
+
     def addNode(self, val):
         newNode = Node(val)
         fNode = self.root
@@ -32,14 +33,14 @@ class BinarySearchTree:
                     break
                 else:
                     fNode = fNode.right
-    
-    def printTree(self,fNode):
+
+    def printTree(self, fNode):
         if fNode != None:
-            print(fNode.val, end = " ")
+            print(fNode.val, end=" ")
             self.printTree(fNode.left)
             self.printTree(fNode.right)
 
-    
+
 if __name__ == "__main__":
     newBinaryTree = BinarySearchTree()
     newBinaryTree.addNode(10)
