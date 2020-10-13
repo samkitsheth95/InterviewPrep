@@ -11,5 +11,6 @@ class Solution:
                 stack.append(i)
         return ''.join(stack)
 
+
 sol = Solution()
 print(sol.removeDuplicates("abbaca"))
