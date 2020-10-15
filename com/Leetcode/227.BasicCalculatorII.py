@@ -45,7 +45,7 @@ class Solution:
             stack.append(self.cc(a, b, op))
         return stack[0]
 
-    def calculate(self, s: str) -> int:
+    def calculateStack(self, s: str) -> int:
         s += '+'
         stack = []
         num = 0
@@ -69,6 +69,32 @@ class Solution:
                 num = 0
                 prevOp = i
         return sum(stack)
+
+    def calculate(self, s: str) -> int:
+        s += '+'
+        prevOp = '+'
+        num, res, preSum = 0, 0, 0
+        for i in s:
+            if i.isdigit():
+                num = 10 * num + int(i)
+            elif not i == ' ':
+                if prevOp == '+':
+                    res += preSum
+                    preSum = num
+                elif prevOp == '-':
+                    res += preSum
+                    preSum = -num
+                elif prevOp == '*':
+                    preSum *= num
+                elif prevOp == '/':
+                    temp = preSum
+                    if temp // num < 0 and temp % num:
+                        preSum = temp // num + 1
+                    else:
+                        preSum = temp // num
+                num = 0
+                prevOp = i
+        return preSum + res
 
 
 sol = Solution()
