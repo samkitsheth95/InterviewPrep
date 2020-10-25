@@ -1,7 +1,6 @@
-from BinarySearchTree import BinarySearchTree
 import sys
-
 sys.path.append('com/DataStructure/Python')
+from BinarySearchTree import BinarySearchTree
 
 
 class Solution:

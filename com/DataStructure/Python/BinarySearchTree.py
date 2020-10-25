@@ -1,4 +1,7 @@
-class Node:
+from collections import deque
+
+
+class TreeNode:
 
     def __init__(self, val=None):
         self.val = val
@@ -15,30 +18,41 @@ class BinarySearchTree:
         return self.root
 
     def addNode(self, val):
-        newNode = Node(val)
+        newNode = TreeNode(val)
         fNode = self.root
         while True:
-            if self.root == None:
+            if not self.root:
                 self.root = newNode
                 break
             elif val <= fNode.val:
-                if fNode.left == None:
+                if not fNode.left:
                     fNode.left = newNode
                     break
                 else:
                     fNode = fNode.left
             else:
-                if fNode.right == None:
+                if not fNode.right:
                     fNode.right = newNode
                     break
                 else:
                     fNode = fNode.right
 
     def printTree(self, fNode):
-        if fNode != None:
+        if fNode:
             print(fNode.val, end=" ")
             self.printTree(fNode.left)
             self.printTree(fNode.right)
+
+    def printTreeBfs(self, fNode):
+        q = deque()
+        q.append(fNode)
+        while q:
+            current = q.popleft()
+            if current:
+                print(current.val, end=" ")
+                q.append(current.left)
+                q.append(current.right)
+        print()
 
 
 if __name__ == "__main__":
@@ -48,4 +62,4 @@ if __name__ == "__main__":
     newBinaryTree.addNode(19)
     newBinaryTree.addNode(17)
     newBinaryTree.addNode(11)
-    newBinaryTree.printTree(newBinaryTree.root)
+    newBinaryTree.printTreeBfs(newBinaryTree.root)
