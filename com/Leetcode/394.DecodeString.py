@@ -20,7 +20,7 @@ class Solution:
                 ans += current
         return ans
 
-    def decodeStringQueue(self, s: str) -> str:
+    def decodeStringQueueRecursion(self, s: str) -> str:
         q = deque()
         for i in s:
             q.append(i)
@@ -42,6 +42,30 @@ class Solution:
                 s += current
         return s
 
+    def decodeStringRecursion(self, s: str) -> str:
+        n = len(s)
+        return self.dfs(s, 0, n)[0]
+
+    def dfs(self, s, i, n):
+        ans = ""
+        while i < n:
+            current = s[i]
+            if current.isdigit():
+                temp = 0
+                while current != '[':
+                    temp = temp * 10 + ord(current) - ord('0')
+                    i += 1
+                    current = s[i]
+                tup = self.dfs(s, i + 1, n)
+                ans += (temp * tup[0])
+                i = tup[1]
+            elif current == ']':
+                return (ans, i)
+            else:
+                ans += current
+            i += 1
+        return (ans, i)
+
 
 sol = Solution()
-print(sol.decodeStringStack(s="30[a]2[bc]"))
+print(sol.decodeStringRecursion(s="30[a]2[bc]"))
