@@ -3,6 +3,7 @@ package com.Leetcode;
 public class ToeplitzMatrix766 {
 
     public static boolean isToeplitzMatrix(int[][] arr) {
+        
         for (int i = 0; i < arr[0].length - 1; i++) {
             for (int j = 0; j < Math.min(arr.length, arr[0].length - i) - 1; j++) {
                 if (arr[j][i + j] != arr[j + 1][i + j + 1]) {
@@ -10,6 +11,7 @@ public class ToeplitzMatrix766 {
                 }
             }
         }
+        
         for (int i = 0; i < arr.length - 1; i++) {
             for (int j = 0; j < Math.min(arr.length - i, arr[0].length) - 1; j++) {
                 if (arr[i + j][j] != arr[i + j + 1][j + 1]) {

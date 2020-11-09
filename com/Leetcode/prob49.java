@@ -17,8 +17,7 @@ public class prob49 {
             Arrays.sort(so);
             String sorted = String.valueOf(so);        
             if (a.get(sorted) == null) 
-                    a.put(sorted, new ArrayList<String>());
-            
+                    a.put(sorted, new ArrayList<String>());            
             a.get(sorted).add(s); 
             
         }        
