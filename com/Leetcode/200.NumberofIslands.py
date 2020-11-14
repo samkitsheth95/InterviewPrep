@@ -40,11 +40,11 @@ class Solution:
                     stack.append([i, j])
                     grid[i][j] = '#'
                     while stack:
-                        k, l = stack.pop()
-                        for m, n in directions:
-                            if self.isInside(k + m, l + n, row, col) and grid[k + m][l + n] == '1':
-                                stack.append([k + m, l + n])
-                                grid[k + m][l + n] = '#'
+                        m, n = stack.pop()
+                        for dm, dn in directions:
+                            if self.isInside(dm + m, dn + n, row, col) and grid[dm + m][dn + n] == '1':
+                                stack.append([dm + m, dn + n])
+                                grid[dm + m][dn + n] = '#'
         return ans
 
 
