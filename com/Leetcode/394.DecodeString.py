@@ -6,6 +6,7 @@ class Solution:
     def decodeStringStack(self, s: str) -> str:
         num, stack, ans = 0, [], ''
         for i in range(len(s)):
+            print(stack)
             current = s[i]
             if current == '[':
                 stack.append([ans, num])
@@ -24,9 +25,9 @@ class Solution:
         q = deque()
         for i in s:
             q.append(i)
-        return self.dfs(q)
+        return self.dfsQ(q)
 
-    def dfs(self, q):
+    def dfsQ(self, q):
         s = ""
         while q:
             current = q.popleft()
@@ -35,7 +36,7 @@ class Solution:
                 while current != '[':
                     temp = temp * 10 + ord(current) - ord('0')
                     current = q.popleft()
-                s += int(temp) * self.dfs(q)
+                s += temp * self.dfsQ(q)
             elif current == ']':
                 return s
             else:
@@ -68,4 +69,4 @@ class Solution:
 
 
 sol = Solution()
-print(sol.decodeStringRecursion(s="30[a]2[bc]"))
+print(sol.decodeStringStack(s="30[a]2[bc]"))
