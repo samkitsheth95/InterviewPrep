@@ -6,7 +6,6 @@ class Solution:
     def decodeStringStack(self, s: str) -> str:
         num, stack, ans = 0, [], ''
         for i in range(len(s)):
-            print(stack)
             current = s[i]
             if current == '[':
                 stack.append([ans, num])
