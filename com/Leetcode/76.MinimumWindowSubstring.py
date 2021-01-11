@@ -9,12 +9,10 @@ class Solution:
         ans = (float('inf'), [0, 0])
         for i in t:
             tCount[ord(i)] += 1
-        
         while end < len(s):
             if tCount[ord(s[end])] > 0:
                 count += 1
             tCount[ord(s[end])] -= 1
-            
             if count == len(t):
                 while start <= end and tCount[ord(s[start])] < 0:
                     tCount[ord(s[start])] += 1
@@ -26,7 +24,7 @@ class Solution:
                 count -= 1
             end += 1
         return "" if ans[0] == float('inf') else s[ans[1][0]:ans[1][1] + 1]
-    
+
     def minWindow(self, s: str, t: str) -> str:
         tCount = Counter(t)
         start, end, count = 0, 0, 0
@@ -51,14 +49,14 @@ class Solution:
                 count -= 1
             end += 1
         return "" if ans[0] == float('inf') else s[ans[1][0]:ans[1][1] + 1]
-    
+
     def isValid(self, arr, locations):
         temp = 0
         for i in arr.keys():
             if i in locations and locations[i] >= arr[i]:
                 temp += 1
         return True if temp == len(arr) else False
-    
+
     def minWindowNaive(self, s: str, t: str) -> str:
         arr = Counter(t)
         locations = {}
