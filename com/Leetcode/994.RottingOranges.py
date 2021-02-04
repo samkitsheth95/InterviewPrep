@@ -27,7 +27,7 @@ class Solution:
                     q.append([-1, -1])
             else:
                 for md, nd in direction:
-                    if self.isValid(m+md, n+nd, len(grid), len(grid[0])) and grid[m + md][n + nd] == 1:
+                    if self.isValid(m + md, n + nd, len(grid), len(grid[0])) and grid[m + md][n + nd] == 1:
                         freshOrange -= 1
                         grid[m + md][n + nd] = 2
                         q.append([m + md, n + nd])

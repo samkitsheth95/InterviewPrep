@@ -1,3 +1,7 @@
+from collections import defaultdict
+from bisect import bisect
+
+
 class TimeMap:
 
     def binarySearch(self, a, key):
