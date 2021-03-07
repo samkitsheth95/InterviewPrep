@@ -7,7 +7,7 @@
 
 
 class Solution:
-    def kthSmallest(self, root: TreeNode, k: int) -> int:
+    def kthSmallestRecursive(self, root: TreeNode, k: int) -> int:
         ans = []
 
         def inorder(root):
@@ -18,4 +18,32 @@ class Solution:
             inorder(root.right)
 
         inorder(root)
+        return ans[k - 1]
+
+    def kthSmallestIterative(self, root: TreeNode, k: int) -> int:
+        ans, stack, curr = [], [], root
+
+        while stack or curr:
+            if curr:
+                stack.append(curr)
+                curr = curr.left
+            else:
+                curr = stack.pop()
+                ans.append(curr.val)
+                curr = curr.right
+        return ans[k - 1]
+
+    def kthSmallestIterativeUptoK(self, root: TreeNode, k: int) -> int:
+        ans, stack, curr = [], [], root
+
+        while stack or curr:
+            if curr:
+                stack.append(curr)
+                curr = curr.left
+            else:
+                curr = stack.pop()
+                k -= 1
+                if not k:
+                    return curr.val
+                curr = curr.right
         return ans[k - 1]
