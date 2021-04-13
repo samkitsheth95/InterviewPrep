@@ -8,14 +8,14 @@ class Solution:
         ans = []
         ans.append(intervals[0])
         prevEnd = intervals[0][1]
-        for i, j in intervals:
-            if i <= prevEnd:
-                if j > prevEnd:
-                    ans[-1][1] = j
-                    prevEnd = j
+        for start, end in intervals:
+            if start <= prevEnd:
+                if end > prevEnd:
+                    ans[-1][1] = end
+                    prevEnd = end
             else:
-                ans.append([i, j])
-                prevEnd = j
+                ans.append([start, end])
+                prevEnd = end
         return ans
 
     def merge(self, intervals):
